@@ -15,10 +15,11 @@ file = st.file_uploader('Image Upload: ', ["png", "jpg", "jpeg"], accept_multipl
 if file is not None:
     try:
         img = Image.open(file)
-        HEIGHT, WIDTH = img.shape 
+        work_img = np.array(img)
+        HEIGHT, WIDTH = work_img.shape 
         COMPH, COMPW = int(512 * (HEIGHT / WIDTH)), 512
 
-        scaled_img = cv2.resize(img, (COMPW, COMPH))
+        scaled_img = cv2.resize(work_img, (COMPW, COMPH))
 
         st.image(scaled_img, caption='Original Image')
 
