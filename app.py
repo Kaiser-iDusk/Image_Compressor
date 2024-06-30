@@ -4,7 +4,7 @@ from app_files.ai_ml import Compress
 # from PIL import Image
 import cv2
 
-cmp = Compress()
+# cmp = Compress()
 
 st.title('Image Compressor')
 
