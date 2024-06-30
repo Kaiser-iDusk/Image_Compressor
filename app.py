@@ -1,6 +1,6 @@
 import streamlit as st 
 import numpy as np
-from app_files.ai_ml import Compressor
+from app_files.ai_ml import Compress
 # from PIL import Image
 import cv2
 
