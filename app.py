@@ -20,7 +20,7 @@ if file is not None:
         work_img = np.array(img)
         # print(work_img.shape)
         HEIGHT, WIDTH = work_img.shape[0], work_img.shape[1]
-        COMPH, COMPW = int(256 * (HEIGHT / WIDTH)), 256
+        COMPH, COMPW = int(400 * (HEIGHT / WIDTH)), 400
 
         scaled_img = cv2.resize(work_img, (COMPW, COMPH))
 
@@ -28,7 +28,7 @@ if file is not None:
 
         cmp = Compress(scaled_img)
 
-        val = st.slider("Select number of image clusters: ", 2, 64, 16, 1)
+        val = st.slider("Select number of image clusters: ", 2, 128, 16, 2)
 
         output = cmp.get_output(int(val))
 
