@@ -1,7 +1,7 @@
 import streamlit as st 
 import numpy as np
 from app_files.ai_ml import Compress
-# from PIL import Image
+from PIL import Image
 import cv2
 
 # cmp = Compress()
@@ -14,8 +14,7 @@ file = st.file_uploader('Image Upload: ', ["png", "jpg", "jpeg"], accept_multipl
 
 if file is not None:
     try:
-        img = cv2.imread(file)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = Image(file)
         HEIGHT, WIDTH = img.shape 
         COMPH, COMPW = int(512 * (HEIGHT / WIDTH)), 512
 
