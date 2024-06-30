@@ -14,7 +14,7 @@ file = st.file_uploader('Image Upload: ', ["png", "jpg", "jpeg"], accept_multipl
 
 if file is not None:
     try:
-        img = Image(file)
+        img = Image.open(file)
         HEIGHT, WIDTH = img.shape 
         COMPH, COMPW = int(512 * (HEIGHT / WIDTH)), 512
 
